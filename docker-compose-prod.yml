@@ -3,6 +3,12 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile-prod
+    restart: unless-stopped
+  
+  proxy:
+    build: ./proxy
     ports:
-      - 3000:3000
+      - 80:80
+    depends_on:
+      - backend
     restart: unless-stopped
