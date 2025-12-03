@@ -2,7 +2,8 @@ services:
   backend:
     build: ./backend
     restart: unless-stopped
-
+    volumes:
+      - ./logs/backend:/var/log/backend
   proxy:
     build: ./proxy
     ports:
@@ -10,3 +11,5 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
+    volumes:
+      - ./logs/proxy:/var/log/nginx
