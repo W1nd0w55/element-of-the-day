@@ -1,7 +1,0 @@
-FROM python:3.13-alpine
-
-WORKDIR /backend
-COPY . .
-
-RUN pip install -r ./spec/req-prod.txt
-ENTRYPOINT [ "gunicorn", "-b", "0.0.0.0:3000", "src.main:app" ]
