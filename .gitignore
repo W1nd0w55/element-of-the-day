@@ -1,4 +1,4 @@
 logs
 .mypy_cache
 .env
-/db
+/db-data

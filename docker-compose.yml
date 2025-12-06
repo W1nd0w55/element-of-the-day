@@ -21,4 +21,4 @@ services:
     - ./.env
     restart: unless-stopped
     volumes:
-    - ./db:/var/lib/postgresql
+    - ./db-data:/var/lib/postgresql
