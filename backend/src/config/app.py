@@ -1,6 +1,7 @@
 from flask import Flask
 from endpoints import example
+from . import settings
 
-app = Flask(__name__)
-app.config.from_pyfile('settings.py')
+app = Flask(str(settings.BASE_DIR))
+app.config.from_object(settings)
 app.add_url_rule('/', view_func=example.example)

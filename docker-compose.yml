@@ -3,6 +3,8 @@ services:
     build: ./backend
     depends_on:
     - db
+    env_file:
+    - ./.env
     restart: unless-stopped
     volumes:
     - ./logs/backend:/var/log/backend
