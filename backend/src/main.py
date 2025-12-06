@@ -7,4 +7,4 @@ if __name__ == '__main__':
         db.create_all()
         logger.info("Database tables created.")
         logger.warning('a')
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(host='backend', port=3000, debug=True)
