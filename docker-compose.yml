@@ -1,15 +1,24 @@
 services:
   backend:
     build: ./backend
+    depends_on:
+    - db
     restart: unless-stopped
     volumes:
-      - ./logs/backend:/var/log/backend
+    - ./logs/backend:/var/log/backend
   proxy:
     build: ./proxy
     ports:
-      - 80:80
+    - 80:80
     depends_on:
-      - backend
+    - backend
     restart: unless-stopped
     volumes:
-      - ./logs/proxy:/var/log/nginx
+    - ./logs/proxy:/var/log/nginx
+  db:
+    image: postgres:latest
+    env_file:
+    - ./.env
+    restart: unless-stopped
+    volumes:
+    - ./db:/var/lib/postgresql
