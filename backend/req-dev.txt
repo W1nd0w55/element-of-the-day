@@ -1,3 +1,4 @@
 -r ./requirements.txt
 mypy >= 1.19
 flake8 >= 7.3
+sqlalchemy[mypy] >= 2.0.44
