@@ -1,3 +1,0 @@
-{
-    "mypy-type-checker.args": ["--config-file=./backend/mypy.ini"]
-}
