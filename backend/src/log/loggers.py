@@ -1,3 +1,3 @@
-from logging import getLogger
+from logging import getLogger, Logger
 
-logger = getLogger('main')
+logger: Logger = getLogger('main')

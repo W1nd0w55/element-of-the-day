@@ -8,6 +8,10 @@ services:
     restart: unless-stopped
     volumes:
     - ./logs/backend:/var/log/backend
+    networks:
+      docker-network:
+        # 10.69.42.201 will be assigned to frontend
+        ipv4_address: 10.69.42.202
   proxy:
     build: ./proxy
     ports:
@@ -17,6 +21,9 @@ services:
     restart: unless-stopped
     volumes:
     - ./logs/proxy:/var/log/nginx
+    networks:
+      docker-network:
+        ipv4_address: 10.69.42.210
   db:
     image: postgres:latest
     env_file:
@@ -24,3 +31,11 @@ services:
     restart: unless-stopped
     volumes:
     - ./db-data:/var/lib/postgresql
+    networks:
+      docker-network:
+        ipv4_address: 10.69.42.211
+networks:
+  docker-network:
+    ipam:
+      config:
+      - subnet: 10.69.42.0/24
