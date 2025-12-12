@@ -1,10 +1,6 @@
-INDEX_NUMBER: int = 0
-INDEX_NAME: int = 1
-INDEX_SYMBOL: int = 2
-INDEX_ATOMIC_MASS: int = 3
-INDEX_SERIES: int = 4
-INDEX_STATE: int = 5
+from datetime import date
 
+current_element: tuple[int, date] = (0, date(1970, 1, 1))
 
 # For unstable elements, the atomic mass is calculated like this:
 # ((mass1*halflife1)+(mass2*halflife2)+...)/halflife1+halflife2+...
@@ -124,7 +120,7 @@ ELEMENTS: list[tuple[int, str, str, float, str, str]] = [
     (110, 'Darmstadtium', 'Ds', 281.0, 'Transition Metal', 'Solid'),
     (111, 'Roentgenium', 'Rg', 284.6, 'Transition Metal', 'Solid'),
     (112, 'Copernicium', 'Cn', 285.0, 'Transition Metal', 'Liquid'),
-    (113, 'Nihonium', 'Nh', 286.4, 'Post-transition Metal', 'Solid')
+    (113, 'Nihonium', 'Nh', 286.4, 'Post-transition Metal', 'Solid'),
     (114, 'Flerovium', 'Fl', 289.8, 'Post-transition Metal', 'Solid'),
     (115, 'Moscovium', 'Mc', 289.3, 'Post-transition Metal', 'Solid'),
     (116, 'Livermorium', 'Lv', 292.5, 'Post-transition Metal', 'Solid'),
