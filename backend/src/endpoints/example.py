@@ -1,2 +1,5 @@
+from fetch import fetch_element
+
+
 def example():
-    return {'hello': 'world'}
+    return fetch_element()

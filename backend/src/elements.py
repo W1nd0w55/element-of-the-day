@@ -10,7 +10,8 @@ INDEX_STATE: int = 5
 # ((mass1*halflife1)+(mass2*halflife2)+...)/halflife1+halflife2+...
 # For example, this is for technetium (yes I wrote this manually...)
 # ((95*(61.96/365.25))+(96*(4.28/365.25))+(97*4210000)+(97*(91.1/365.25))+(98*4200000)+(99*211100)+(99*(6.01/24/365.25)))/((61.96/365.25)+(4.28/365.25)+4210000+(91.1/365.25)+4200000+211100+(6.01/24/365.25))
-elements: list[tuple[int, str, str, float, str, str]] = [
+ELEMENTS: list[tuple[int, str, str, float, str, str]] = [
+    (0, 'Placeholder', '', 0.0, '', ''),
     (1, 'Hydrogen', 'H', 1.008, 'Nonmetal', 'Gas'),
     (2, 'Helium', 'He', 4.003, 'Noble Gas', 'Gas'),
     (3, 'Lithium', 'Li', 6.940, 'Alkali Metal', 'Solid'),
