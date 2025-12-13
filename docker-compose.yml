@@ -1,8 +1,6 @@
 services:
   backend:
     build: ./backend
-    env_file:
-    - ./.env
     restart: unless-stopped
     networks:
       docker-network:
