@@ -1,4 +1,4 @@
-from app import app, db
+from app import app
 from log.loggers import logger
 from sys import argv
 
@@ -12,10 +12,6 @@ def run_dev() -> None:
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        logger.info("Database tables created.")
-
     match argv[1]:
         case 'run-dev':
             run_dev()
