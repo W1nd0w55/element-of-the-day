@@ -1,1 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import url('@fontsource/jetbrains-mono/400.css');
+@import url('@fontsource/jetbrains-mono/700.css');
+
+.jbmono {
+    font-family: 'JetBrains Mono';
+}
