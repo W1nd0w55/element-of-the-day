@@ -24,7 +24,7 @@ const Content = () => {
     }
 
     return <div className='text-[30pt] text-center'>
-        <div>Today's element is...</div><br />
+        <div>Today's element is...</div>
         <div>{element.name}</div>
     </div>;
 };
