@@ -16,7 +16,7 @@ def schedule() -> None:
             update_entry(randint(1, 118))
             sleep(60)
 
-    thread: Thread = Thread(target=update_every_minute)
+    thread: Thread = Thread(target=update_every_minute, daemon=True)
     thread.start()
 
 

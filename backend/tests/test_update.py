@@ -31,3 +31,14 @@ def test_repeat(mocker: MockerFixture) -> None:
     update_schedule.update_entry(78)  # Platinum
     update_schedule.update_entry(94)  # Plutonium
     assert elements.current_element[0] == 45
+
+
+def test_schedule(mocker: MockerFixture) -> None:
+    from src import update_schedule, elements
+    from time import sleep
+
+    mocker.patch('src.update_schedule.sleep', lambda x: sleep(.1))
+
+    update_schedule.schedule()
+    sleep(.5)
+    assert elements.current_element[0] != 0
