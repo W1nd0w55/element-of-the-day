@@ -2,7 +2,12 @@ from random import randint
 from threading import Thread
 from time import sleep
 from datetime import date
-import elements
+from . import elements
+
+
+# For testing purposes because datetime.date is immutable
+def get_today() -> date:
+    return date.today()
 
 
 def schedule() -> None:
@@ -16,7 +21,7 @@ def schedule() -> None:
 
 
 def update_entry(element: int) -> None:
-    today: date = date.today()
+    today: date = get_today()
     if elements.current_element[1] == today:
         return
 
