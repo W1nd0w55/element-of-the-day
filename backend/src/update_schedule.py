@@ -1,7 +1,7 @@
 from random import randint
 from threading import Thread
 from time import sleep
-from log.loggers import logger
+from .log import logger
 from datetime import date
 import elements
 

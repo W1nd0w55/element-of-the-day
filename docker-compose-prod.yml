@@ -3,8 +3,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile-prod
-    depends_on:
-    - db
     env_file:
     - ./.env
     restart: unless-stopped
@@ -26,16 +24,6 @@ services:
     networks:
       docker-network:
         ipv4_address: 10.69.42.210
-  db:
-    image: postgres:latest
-    env_file:
-    - ./.env
-    restart: unless-stopped
-    volumes:
-    - ./db-data:/var/lib/postgresql
-    networks:
-      docker-network:
-        ipv4_address: 10.69.42.211
 networks:
   docker-network:
     ipam:

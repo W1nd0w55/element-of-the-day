@@ -1,6 +1,6 @@
 from elements import ELEMENTS
 import elements
-from log.loggers import logger
+from .log import logger
 
 
 def get_element_num() -> dict[str, int]:

@@ -1,6 +1,6 @@
 from app import app
 from waitress import serve
-from log.loggers import logger
+from .log import logger
 from sys import argv
 from update_schedule import schedule
 
