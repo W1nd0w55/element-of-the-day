@@ -38,7 +38,8 @@ def test_schedule(mocker: MockerFixture) -> None:
     from time import sleep
 
     mocker.patch('src.update_schedule.sleep', lambda x: sleep(.1))
+    mocker.patch('src.update_schedule.randint', lambda x, y: 43)
 
     update_schedule.schedule()
     sleep(.5)
-    assert elements.current_element[0] != 0
+    assert elements.current_element[0] == 43
