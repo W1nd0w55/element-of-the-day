@@ -1,12 +1,26 @@
-import type { ReactNode } from "react";
+import fetchElement from './fetch';
+import type { ElementSpec } from './common';
+import { useState, useEffect } from 'react';
 
-interface Props {
-    children: ReactNode;
-};
+const Content = () => {
+    const [element, setElement] = useState<ElementSpec>({
+        num: 0,
+        name: 'Placeholder',
+        symbol: '',
+        mass: 0.0,
+        series: '',
+        state: ''
+    });
 
-const Content = (props: Props) => {
+    useEffect(() => {
+        (async () => {
+            const element: ElementSpec = await fetchElement();
+            setElement(element);
+        })();
+    });
+
     return <div className='text-[30pt]'>
-        {props.children}
+        {element.name}
     </div>;
 };
 
