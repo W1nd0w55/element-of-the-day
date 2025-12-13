@@ -25,7 +25,7 @@ const Content = () => {
 
     return <div className='text-[30pt] flex flex-col text-center items-center'>
         <div>Today's element is...</div>
-        <div className='flex flex-col w-[110px] h-[110px] border-[2px] border-white border-solid p-[3px]'>
+        <div className='flex flex-col w-[110px] h-[110px] border-[2px] border-white border-solid p-[3px] shadow'>
             <div className='flex flex-row w-[100px] h-[20px] text-[10pt] mb-[auto]'>
                 <div className='mr-[auto]'>{element.num}</div>
                 <div>{element.mass}</div>
