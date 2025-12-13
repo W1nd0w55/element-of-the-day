@@ -19,8 +19,6 @@ services:
     depends_on:
     - backend
     restart: unless-stopped
-    volumes:
-    - ./logs/proxy:/var/log/nginx
     networks:
       docker-network:
         ipv4_address: 10.69.42.210

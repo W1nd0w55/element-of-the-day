@@ -1,12 +1,11 @@
 from app import app
 from waitress import serve
-from .log import logger
 from sys import argv
 from update_schedule import schedule
 
 if len(argv) != 2:
-    logger.error('Incorrect Usage')
     print(f'Usage: {argv[0]} run-dev')
+    exit(1)
 
 
 def run_dev() -> None:

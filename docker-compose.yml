@@ -4,8 +4,6 @@ services:
     env_file:
     - ./.env
     restart: unless-stopped
-    volumes:
-    - ./logs/backend:/var/log/backend
     networks:
       docker-network:
         # 10.69.42.201 will be assigned to frontend
@@ -17,8 +15,6 @@ services:
     depends_on:
     - backend
     restart: unless-stopped
-    volumes:
-    - ./logs/proxy:/var/log/nginx
     networks:
       docker-network:
         ipv4_address: 10.69.42.210
