@@ -4,4 +4,4 @@ WORKDIR /backend
 COPY . .
 
 RUN pip install -r ./req-prod.txt
-ENTRYPOINT [ "python3", "src", "run-prod" ]
+ENTRYPOINT [ "python3", "-m", "src", "run-prod" ]

@@ -1,7 +1,7 @@
-from app import app
+from .app import app
 from waitress import serve
 from sys import argv
-from update_schedule import schedule
+from .update_schedule import schedule
 
 if len(argv) != 2:
     print(f'Usage: {argv[0]} run-dev')

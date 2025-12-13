@@ -1,5 +1,5 @@
-from elements import ELEMENTS
-import elements
+from .elements import ELEMENTS
+from . import elements
 
 
 def get_element_num() -> dict[str, int]:
