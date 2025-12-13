@@ -23,8 +23,9 @@ const Content = () => {
         return <h1 className='text-[30pt]'>Loading...</h1>
     }
 
-    return <div className='text-[30pt]'>
-        {element.name}
+    return <div className='text-[30pt] text-center'>
+        <div>Today's element is...</div><br />
+        <div>{element.name}</div>
     </div>;
 };
 
