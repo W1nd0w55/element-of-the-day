@@ -10,4 +10,8 @@ export default defineConfig({
             },
         }),
     ],
+    server: {
+        host: 'frontend',
+        port: 3001
+    }
 });
