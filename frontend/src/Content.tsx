@@ -19,6 +19,10 @@ const Content = () => {
         })();
     });
 
+    if (element.name === 'Placeholder') {
+        return <h1 className='text-[30pt]'>Loading...</h1>
+    }
+
     return <div className='text-[30pt]'>
         {element.name}
     </div>;
