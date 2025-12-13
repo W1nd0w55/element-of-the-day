@@ -1,9 +1,13 @@
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-prod
     env_file:
     - ./.env
     restart: unless-stopped
+    volumes:
+    - ./logs/backend:/var/log/backend
     networks:
       docker-network:
         # 10.69.42.201 will be assigned to frontend
