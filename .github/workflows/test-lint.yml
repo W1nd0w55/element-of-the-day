@@ -39,3 +39,17 @@ jobs:
         pip install -r ./backend/req-dev.txt
     - name: Run pytest
       run: pytest ./backend/tests --cov
+  lint-frontend:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x, 24.x, 25.x, 26.x]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: npm
+    - name: Lint Frontend
+      run: npm run lint
