@@ -1,5 +1,5 @@
-import fetchElement from './fetch';
-import type { ElementSpec } from './common';
+import { setColors } from './common';
+import type { ElementSpec, ColorsSpec } from './common';
 import { useState, useEffect } from 'react';
 
 const Content = () => {
@@ -14,23 +14,25 @@ const Content = () => {
 
     useEffect(() => {
         (async () => {
-            const element: ElementSpec = await fetchElement();
-            setElement(element);
+            const response: Response = await fetch('/api/info');
+            setElement(await response.json());
         })();
-    });
+    }, []);
 
     if (element.name === 'Placeholder') {
         return <h1 className='text-[30pt]'>Loading...</h1>
     }
 
+    const colors: ColorsSpec = setColors(element);
+
     return <div className='text-[30pt] flex flex-col text-center items-center'>
         <div>Today's element is...</div>
-        <div className='flex flex-col w-[110px] h-[110px] border-[2px] border-white border-solid p-[3px] shadow'>
+        <div style={{backgroundColor: colors.backgroundColor}} className='flex flex-col w-[110px] h-[110px] border-[2px] border-white border-solid p-[3px] shadow'>
             <div className='flex flex-row w-[100px] h-[20px] text-[10pt] mb-[auto]'>
                 <div className='mr-[auto]'>{element.num}</div>
                 <div>{element.mass}</div>
             </div>
-            <div>{element.symbol}</div>
+            <div style={{color: colors.color}}>{element.symbol}</div>
             <div className='text-[10pt] mt-[auto]'>{element.name}</div>
         </div>
     </div>;
