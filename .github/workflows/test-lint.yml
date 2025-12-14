@@ -5,7 +5,7 @@ on:
 permissions:
   contents: read
 jobs:
-  lint-backend:
+  backend-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,24 +22,9 @@ jobs:
         pip install -r ./backend/req-dev.txt
     - name: Run flake8
       run: flake8 ./backend --config ./backend/flake8.conf
-  test-backend:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies & tools
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r ./backend/req-dev.txt
     - name: Run pytest
       run: pytest ./backend/tests --cov
-  lint-frontend:
+  frontend-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,7 +41,11 @@ jobs:
       run: |
         cd ./frontend
         npm i
-    - name: Lint Frontend
+    - name: Run ESLint
       run: |
         cd ./frontend
         npm run lint
+    - name: Run vitest
+      run: |
+        cd ./frontend
+        npm run test
