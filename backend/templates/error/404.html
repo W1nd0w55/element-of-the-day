@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <title>Element of Today</title>
+        <style>
+            body {
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+                overflow: hidden;
+            }
+
+            #outer {
+                font-family: 'JetBrains Mono';
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: sans-serif;
+            }
+
+            #content {
+                font-size: 30pt;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            #box {
+                display: flex;
+                flex-direction: column;
+                width: 120px;
+                height: 120px;
+                border: 2px solid white;
+                padding: 3px;
+                box-shadow: 0px 0px 1500px 100px red;
+            }
+
+            #upper {
+                display: flex;
+                flex-direction: row;
+                width: 120px;
+                height: 20px;
+                font-size: 10pt;
+                margin-bottom: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            <div id="content">
+                <div>Your element is...</div>
+                <div id="box">
+                    <div id="upper">
+                        <div style='margin-right: auto'>404</div>
+                        <div>Not Found</div>
+                    </div>
+                    <div>Un</div>
+                    <div style='font-size: 10pt; margin-top: auto'>Unobtainium</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
