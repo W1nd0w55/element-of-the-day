@@ -10,5 +10,4 @@ app.add_url_rule('/info', view_func=get_element_info)
 
 @app.errorhandler(404)
 def error_404(request) -> tuple[str, int]:
-    print(app.template_folder)
     return render_template('error/404.html'), 404
