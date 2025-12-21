@@ -4,8 +4,8 @@ WORKDIR /frontend
 COPY . .
 COPY ./nginx.prod.conf /etc/nginx/nginx.conf
 
+RUN apk add nginx
 RUN npm i
 RUN rm -rf ./dist
 RUN npm run build
-RUN apk add nginx
 ENTRYPOINT [ "nginx" ]
