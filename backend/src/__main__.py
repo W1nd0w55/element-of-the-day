@@ -9,11 +9,11 @@ if len(argv) != 2:
 
 
 def run_dev() -> None:
-    app.run(host='backend', port=3000, debug=True)
+    app.run(host='0.0.0.0', port=3000, debug=True)
 
 
 def run_prod() -> None:
-    serve(app, host='backend', port=3000)
+    serve(app, host='0.0.0.0', port=3000)
 
 
 if __name__ == '__main__':
