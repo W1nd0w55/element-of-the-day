@@ -18,17 +18,17 @@ jobs:
       run: |
         cd frontend
         docker build . -f Dockerfile-prod \
-        -t ghcr.io/W1nd0w55/element-of-the-day-frontend:latest-staging \
-        -t ghcr.io/W1nd0w55/element-of-the-day-frontend:${{ github.sha }}
+        -t ghcr.io/w1nd0w55/element-of-the-day-frontend:latest-staging \
+        -t ghcr.io/w1nd0w55/element-of-the-day-frontend:${{ github.sha }}
     - name: Build Backend Image
       run: |
         cd backend
         docker build . -f Dockerfile-prod \
-        -t ghcr.io/W1nd0w55/element-of-the-day-backend:latest-staging \
-        -t ghcr.io/W1nd0w55/element-of-the-day-backend:${{ github.sha }}
+        -t ghcr.io/w1nd0w55/element-of-the-day-backend:latest-staging \
+        -t ghcr.io/w1nd0w55/element-of-the-day-backend:${{ github.sha }}
     - name: Publish Both Images
       run: |
-        docker push ghcr.io/W1nd0w55/element-of-the-day-frontend:latest-staging
-        docker push ghcr.io/W1nd0w55/element-of-the-day-frontend:${{ github.sha }}
-        docker push ghcr.io/W1nd0w55/element-of-the-day-backend:latest-staging
-        docker push ghcr.io/W1nd0w55/element-of-the-day-backend:${{ github.sha }}
+        docker push ghcr.io/w1nd0w55/element-of-the-day-frontend:latest-staging
+        docker push ghcr.io/w1nd0w55/element-of-the-day-frontend:${{ github.sha }}
+        docker push ghcr.io/w1nd0w55/element-of-the-day-backend:latest-staging
+        docker push ghcr.io/w1nd0w55/element-of-the-day-backend:${{ github.sha }}
