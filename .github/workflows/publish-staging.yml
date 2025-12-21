@@ -1,0 +1,34 @@
+name: Publish Staging Images
+on:
+  push:
+    branches:
+    - staging
+jobs:
+  publish-images:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: https://ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build Frontend Image
+      run: |
+        cd frontend
+        docker build . --dockerfile Dockerfile-prod \
+        -t ghcr.io/W1nd0w55/element-of-the-day-frontend:latest-staging \
+        -t ghcr.io/W1nd0w55/element-of-the-day-frontend:${{ github.sha }}
+    - name: Build Backend Image
+      run: |
+        cd backend
+        docker build . --dockerfile Dockerfile-prod \
+        -t ghcr.io/W1nd0w55/element-of-the-day-backend:latest-staging \
+        -t ghcr.io/W1nd0w55/element-of-the-day-backend:${{ github.sha }}
+    - name: Publish Both Images
+      run: |
+        docker push ghcr.io/W1nd0w55/element-of-the-day-frontend:latest-staging
+        docker push ghcr.io/W1nd0w55/element-of-the-day-frontend:${{ github.sha }}
+        docker push ghcr.io/W1nd0w55/element-of-the-day-backend:latest-staging
+        docker push ghcr.io/W1nd0w55/element-of-the-day-backend:${{ github.sha }}

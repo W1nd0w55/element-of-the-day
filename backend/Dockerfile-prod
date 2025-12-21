@@ -3,5 +3,5 @@ FROM python:3.13-alpine
 WORKDIR /backend
 COPY . .
 
-RUN pip install -r ./req-prod.txt
+RUN pip install -r ./requirements.txt
 ENTRYPOINT [ "python3", "-m", "src", "run-prod" ]

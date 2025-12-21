@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@import url('@fontsource/jetbrains-mono/400.css');
+@import url('@fontsource/jetbrains-mono/700.css');
+
+.jbmono {
+    font-family: 'JetBrains Mono';
+}
+
+.glow {
+    box-shadow: 0px 0px 1500px 100px blue;
+}
+
+.red-glow {
+    box-shadow: 0px 0px 1500px 100px red;
+}
