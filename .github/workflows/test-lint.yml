@@ -22,6 +22,8 @@ jobs:
         pip install -r ./backend/req-dev.txt
     - name: Run flake8
       run: flake8 ./backend --config ./backend/flake8.conf
+    - name: Run mypy
+      run: mypy ./backend
     - name: Run pytest
       run: pytest ./backend/tests --cov
   frontend-tests:
