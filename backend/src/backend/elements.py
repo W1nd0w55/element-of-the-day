@@ -1,7 +1,7 @@
 from datetime import date
 
 current_element: tuple[int, date] = (0, date(1970, 1, 1))
-type Element = tuple[int, str, str, float, str, str]
+Element = tuple[int, str, str, float, str, str]
 
 # For unstable elements, the atomic mass is calculated like this:
 # ((mass1*halflife1)+(mass2*halflife2)+...)/halflife1+halflife2+...
