@@ -19,7 +19,7 @@ license = "MIT"
 
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Development Status :: 4 - Stable",
+    "Development Status :: 5 - Stable",
     "Intended Audience :: Scientists"
 ]
 
