@@ -1,4 +1,4 @@
-from pytest_mock import MockerFixture, MockType
+from pytest_mock import MockerFixture
 from pytest import mark
 
 
