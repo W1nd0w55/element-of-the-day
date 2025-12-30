@@ -50,4 +50,4 @@ jobs:
     - name: Run vitest
       run: |
         cd ./frontend
-        npm run test
+        npm run test-cov
