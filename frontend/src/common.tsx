@@ -12,6 +12,11 @@ interface ColorsSpec {
     backgroundColor: string;
 };
 
+interface DataSpec {
+    element: ElementSpec,
+    colors: ColorsSpec
+};
+
 const setColors = (element: ElementSpec): ColorsSpec => {
     const col: ColorsSpec = {
         color: '#7f7f7f',
@@ -66,5 +71,5 @@ const setColors = (element: ElementSpec): ColorsSpec => {
     return col;
 };
 
-export type { ElementSpec, ColorsSpec };
+export type { ElementSpec, ColorsSpec, DataSpec };
 export { setColors };
