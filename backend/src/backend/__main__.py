@@ -1,20 +1,10 @@
-from .app import app
-from waitress import serve
+from . import run_dev, run_prod
 from sys import argv
 from .update_schedule import schedule
 
 if len(argv) != 2:
-    print(f'Usage: {argv[0]} run-dev')
+    print('Usage: backend run-dev|run-prod')
     exit(1)
-
-
-def run_dev() -> None:
-    app.run(host='0.0.0.0', port=3000, debug=True)
-
-
-def run_prod() -> None:
-    serve(app, host='0.0.0.0', port=3000)
-
 
 if __name__ == '__main__':
     schedule()

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools >= 80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backend"
+version = "1.0.0"
+requires-python = ">= 3.10"
+
+dependencies = [
+    "Flask >= 3",
+    "waitress >= 3"
+]
+
+authors = [
+    { name = "W1nd0w55", email = "W1nd0w5-dev@outlook.com" }
+]
+license = "MIT"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 5 - Stable",
+    "Intended Audience :: Scientists"
+]
+
+[project.urls]
+Repository = "https://github.com/W1nd0w55/element-of-the-day"

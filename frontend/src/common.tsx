@@ -2,7 +2,7 @@ interface ElementSpec {
     num: number;
     name: string;
     symbol: string;
-    mass: number;
+    mass: number | string; // for 404 page
     series: string;
     state: string;
 };
@@ -10,6 +10,12 @@ interface ElementSpec {
 interface ColorsSpec {
     color: string;
     backgroundColor: string;
+};
+
+interface DataSpec {
+    element: ElementSpec,
+    colors: ColorsSpec,
+    red?: boolean
 };
 
 const setColors = (element: ElementSpec): ColorsSpec => {
@@ -66,5 +72,5 @@ const setColors = (element: ElementSpec): ColorsSpec => {
     return col;
 };
 
-export type { ElementSpec, ColorsSpec };
+export type { ElementSpec, ColorsSpec, DataSpec };
 export { setColors };

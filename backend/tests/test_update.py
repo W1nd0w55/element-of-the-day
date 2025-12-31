@@ -11,9 +11,9 @@ from datetime import date
     (85, date(2099, 12, 31)),
 ])
 def test_update(mocker: MockerFixture, element: int, day: date) -> None:
-    from src import update_schedule, elements
+    from src.backend import update_schedule, elements
 
-    mock_today: MockType = mocker.patch('src.update_schedule.get_today')
+    mock_today: MockType = mocker.patch('src.backend.update_schedule.get_today')
     mock_today.return_value = day
 
     update_schedule.update_entry(element)
@@ -21,10 +21,10 @@ def test_update(mocker: MockerFixture, element: int, day: date) -> None:
 
 
 def test_repeat(mocker: MockerFixture) -> None:
-    from src import update_schedule, elements
+    from src.backend import update_schedule, elements
 
     # We really don't need this, but whatever tests can run at exactly midnight
-    mock_today: MockType = mocker.patch('src.update_schedule.get_today')
+    mock_today: MockType = mocker.patch('src.backend.update_schedule.get_today')
     mock_today.return_value = date(2025, 12, 12)
 
     update_schedule.update_entry(45)  # Rhodium
@@ -34,11 +34,11 @@ def test_repeat(mocker: MockerFixture) -> None:
 
 
 def test_schedule(mocker: MockerFixture) -> None:
-    from src import update_schedule, elements
+    from src.backend import update_schedule, elements
     from time import sleep
 
-    mocker.patch('src.update_schedule.sleep', lambda x: sleep(.1))
-    mocker.patch('src.update_schedule.randint', lambda x, y: 43)
+    mocker.patch('src.backend.update_schedule.sleep', lambda x: sleep(.1))
+    mocker.patch('src.backend.update_schedule.randint', lambda x, y: 43)
 
     update_schedule.schedule()
     sleep(.5)
