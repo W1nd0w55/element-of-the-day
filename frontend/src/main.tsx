@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.tsx';
-import Error404 from './Error404.tsx';
+import App from './components/App.tsx';
+import Error404 from './components/Error404.tsx';
 import './main.css';
 
 const router = createBrowserRouter([

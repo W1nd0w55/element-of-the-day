@@ -1,5 +1,5 @@
-import { setColors } from './common';
-import type { ElementSpec, ColorsSpec } from './common';
+import { setColors } from '../common';
+import type { ElementSpec, ColorsSpec } from '../common';
 import { useState, useEffect } from 'react';
 
 const Content = () => {
