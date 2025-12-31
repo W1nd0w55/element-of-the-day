@@ -2,7 +2,7 @@ import Content from './Content';
 import type { ElementSpec, ColorsSpec } from '../common';
 
 const Error404 = () => {
-    let element: ElementSpec = {
+    const element: ElementSpec = {
         num: 404,
         name: 'Unobtainium',
         symbol: 'Un',
@@ -11,7 +11,7 @@ const Error404 = () => {
         state:  'ever'
     };
 
-    let colors: ColorsSpec = {
+    const colors: ColorsSpec = {
         color: '#ffffff',
         backgroundColor: '#000000'
     }
