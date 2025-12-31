@@ -1,0 +1,13 @@
+.env
+.mypy_cache
+__pycache__
+.pytest_cache
+coverage
+.coverage
+node_modules
+dist
+docker-compose-prod.yml
+.vs
+env
+*.egg-info
+build

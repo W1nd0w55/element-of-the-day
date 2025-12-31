@@ -1,0 +1,18 @@
+from .elements import ELEMENTS
+from . import elements
+
+
+def get_element_num() -> dict[str, int]:
+    return {'num': elements.current_element[0]}
+
+
+def get_element_info() -> dict[str, str | int | float]:
+    element: int = elements.current_element[0]
+    return {
+        'num': element,
+        'name': ELEMENTS[element][1],
+        'symbol': ELEMENTS[element][2],
+        'mass': ELEMENTS[element][3],
+        'series': ELEMENTS[element][4],
+        'state': ELEMENTS[element][5]
+    }
